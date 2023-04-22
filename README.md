@@ -93,7 +93,7 @@ Note that an instance is printed using the name of its class and a unique identi
 
 `@defmethod print_object(obj::Object, io) = print(io, "<$(class_name(class_of(obj))) $(string(objectid(obj), base=62))>")`
 
-Naturally, it is possible to add additional methods to that generic function: 
+Naturally, it is possible to add additional methods to that generic function:
 
 `@defmethod print_object(c::ComplexNumber, io) = print(io, "$(c.real)$(c.imag < 0 ? "-" : "+")$(abs(c.imag))i")`
 
