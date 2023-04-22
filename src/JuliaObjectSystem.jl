@@ -1,5 +1,5 @@
 module JuliaObjectSystem
 
-greet() = print("Hello World!")
+include("BaseStructure.jl")
 
 end # module
