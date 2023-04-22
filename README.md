@@ -314,13 +314,15 @@ end
 
 The execution of the combined program prints the following:
 
->Drawing a Line on Printer
+```Julia
+Drawing a Line on Printer
 Changing printer ink color to red
 Drawing a Circle on Printer
 Changing printer ink color to black
 Changing printer ink color to blue
 Drawing a Line on Printer
 Changing printer ink color to black
+```
 
 Note that when the generic function **draw** is called using a **ColoredCircle** and a **ColoredPrinter**, there are multiple applicable methods, namely, one specialized for (**Circle**, **Printer**) and another for (**ColorMixin**, **Device**). Due to the local ordering of direct superclasses, the second method is more specific than the first and, thus, is the method that is called. However, after changing the
 device color, this method calls **call_next_method** which calls the next most specific method, in this case, the first one of the list of applicable methods. When the called method returns, ending the **call_next_method** operation, the caller resumes execution, restoring the device’s color.
