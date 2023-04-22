@@ -1,5 +1,5 @@
 module JuliaObjectSystem
 
-include("BaseStructure.jl")
+include("BaseJOS.jl")
 
 end # module
