@@ -22,4 +22,18 @@ using Test
     @test length(class_direct_slots(Class))  == 5
     @test length(class_slots(Class))  == 5
     @test class_of(Class) === Class
+
+    @test class_name(GenericFunction) == :GenericFunction
+    @test class_cpl(GenericFunction)  == [GenericFunction, Object, Top]
+    @test class_direct_superclasses(GenericFunction) == [Object]
+    @test length(class_direct_slots(GenericFunction))  == 3
+    @test length(class_slots(GenericFunction))  == 3
+    @test class_of(GenericFunction) === Class
+
+    @test class_name(MultiMethod) == :MultiMethod
+    @test class_cpl(MultiMethod)  == [MultiMethod, Object, Top]
+    @test class_direct_superclasses(MultiMethod) == [Object]
+    @test length(class_direct_slots(MultiMethod))  == 3
+    @test length(class_slots(MultiMethod))  == 3
+    @test class_of(MultiMethod) === Class
 end
