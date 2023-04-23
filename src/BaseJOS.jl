@@ -1,4 +1,5 @@
-export BaseStructure, SlotDefinition
+export BaseStructure, SlotDefinition, 
+    Top, Object, Class
 
 mutable struct BaseStructure
     class_of_reference::Any #= Supposed to be another BaseStructure =#
@@ -10,19 +11,19 @@ mutable struct SlotDefinition
     initform::Any
 end
 
-function Base.hash(one::Slot)
+function Base.hash(one::SlotDefinition)
     return hash(one.name) + hash(one.initform)
 end
 
-function Base.:(==)(one::Slot, another::Slot)
+function Base.:(==)(one::SlotDefinition, another::SlotDefinition)
     return one.name == another.name
 end
 
-function Base.:(==)(one::Symbol, another::Slot)
+function Base.:(==)(one::Symbol, another::SlotDefinition)
     return one == another.name
 end
 
-function Base.:(==)(one::Slot, another::Symbol)
+function Base.:(==)(one::SlotDefinition, another::Symbol)
     return one.name == another
 end
 
@@ -58,19 +59,19 @@ Class = BaseStructure(
         :name=>:Class,
         :direct_superclasses=>[Object], 
         :direct_slots=>[
-            Slot(:name, missing), 
-            Slot(:direct_superclasses, []), 
-            Slot(:class_precedence_list, []), 
-            Slot(:slots, []), 
-            Slot(:direct_subclasses, [])
+            SlotDefinition(:name, missing), 
+            SlotDefinition(:direct_superclasses, []), 
+            SlotDefinition(:class_precedence_list, []), 
+            SlotDefinition(:slots, []), 
+            SlotDefinition(:direct_subclasses, [])
         ],
         :class_precedence_list=>[Object, Top],
         :slots=>[
-            Slot(:name, missing), 
-            Slot(:direct_superclasses, []), 
-            Slot(:class_precedence_list, []), 
-            Slot(:slots, []), 
-            Slot(:direct_subclasses, [])
+            SlotDefinition(:name, missing), 
+            SlotDefinition(:direct_superclasses, []), 
+            SlotDefinition(:class_precedence_list, []), 
+            SlotDefinition(:slots, []), 
+            SlotDefinition(:direct_subclasses, [])
         ]
     )
 )
