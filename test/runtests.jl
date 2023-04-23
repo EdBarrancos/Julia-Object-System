@@ -2,5 +2,5 @@ using JuliaObjectSystem
 using Test
 
 @testset "All Tests" begin
-    @assert true == true
+    include("test_baseJOS.jl")
 end

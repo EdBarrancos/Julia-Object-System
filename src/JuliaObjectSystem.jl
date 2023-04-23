@@ -1,5 +1,3 @@
 module JuliaObjectSystem
-
-greet() = print("Hello World!")
-
+    include("BaseJOS.jl")
 end # module
