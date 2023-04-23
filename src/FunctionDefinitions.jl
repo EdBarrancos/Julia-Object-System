@@ -6,15 +6,15 @@ GenericFunction = BaseStructure(
         :name=>:GenericFunction,
         :direct_superclasses=>[Object], 
         :direct_slots=>[
-            Slot(:name, missing), 
-            Slot(:lambda_list, missing), 
-            Slot(:methods, missing)
+            SlotDefinition(:name, missing), 
+            SlotDefinition(:lambda_list, missing), 
+            SlotDefinition(:methods, missing)
         ],
         :class_precedence_list=>[Object, Top],
         :slots=>[
-            Slot(:name, missing), 
-            Slot(:lambda_list, missing), 
-            Slot(:methods, missing)
+            SlotDefinition(:name, missing), 
+            SlotDefinition(:lambda_list, missing), 
+            SlotDefinition(:methods, missing)
         ]
     )
 )
@@ -27,15 +27,15 @@ MultiMethod = BaseStructure(
         :name=>:MultiMethod,
         :direct_superclasses=>[Object], 
         :direct_slots=>[
-            Slot(:specializers, missing), 
-            Slot(:procedure, missing), 
-            Slot(:generic_function, missing)
+            SlotDefinition(:specializers, missing), 
+            SlotDefinition(:procedure, missing), 
+            SlotDefinition(:generic_function, missing)
         ],
         :class_precedence_list=>[Object, Top],
         :slots=>[
-            Slot(:specializers, missing), 
-            Slot(:procedure, missing), 
-            Slot(:generic_function, missing)
+            SlotDefinition(:specializers, missing), 
+            SlotDefinition(:procedure, missing), 
+            SlotDefinition(:generic_function, missing)
         ]
     )
 )
